@@ -282,6 +282,15 @@ void main() {
         expect(fakeVideoPlayerPlatform.dataSourceDescriptions[0].uri,
             'file://a.avi');
       });
+
+      test('contentUri', () async {
+        final VideoPlayerController controller =
+            VideoPlayerController.contentUri(Uri.parse('content://video');
+        await controller.initialize();
+
+        expect(fakeVideoPlayerPlatform.dataSourceDescriptions[0].uri,
+            'content://video');
+      });
     });
 
     test('dispose', () async {
